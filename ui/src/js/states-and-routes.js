@@ -8,6 +8,8 @@ export default  function routeConfig($stateProvider, $urlRouterProvider) {
       });
   }; 
     
-routeConfig.$inject = ['$stateProvider',
-  '$urlRouterProvider'];    
+routeConfig.$inject = [
+  '$stateProvider',
+  '$urlRouterProvider'
+];    
     

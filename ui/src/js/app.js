@@ -1,19 +1,12 @@
+import directives from './directives';
+import statesAndRoutes from './states-and-routes'
+
 var app = angular.module('weatherApp', [
   'ui.router',
+  directives.name
 ]); 
 
-/*
-app.config(['$stateProvider', '$urlRouterProvider', 
-    function($stateProvider, $urlRouterProvider) {
-      $urlRouterProvider.otherwise('/');
-      $stateProvider
-      .state('home', {
-        url: '/',
-        templateUrl: 'src/views/welcome.html'
-      });
-    }]);
-    */
-import statesAndRoutes from './states-and-routes'
 app.config(statesAndRoutes);
+
 
 export default app;
