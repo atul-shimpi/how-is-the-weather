@@ -1,3 +1,4 @@
+import styles from "../css/app.scss";
 import directives from './directives';
 import statesAndRoutes from './states-and-routes'
 

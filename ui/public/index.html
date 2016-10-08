@@ -7,10 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- This site is optimized with the Yoast SEO plugin v3.3.4 - https://yoast.com/wordpress/plugins/seo/ -->
     <meta name="description" content="How is the weather is a application from Compucorp which tells you the weather conditions."/>
-    <!-- / Yoast SEO plugin. --> 
-  </head>
+    <!-- / Yoast SEO plugin. -->    
+  <link href="styles/styles.css" rel="stylesheet"></head>
   
   <body ng-app = 'weatherApp'>
+  <app-title></app-title>
     <div
       style="height: 100%;"
       ui-view
@@ -18,5 +19,5 @@
 
     <!-- Our app and all dependencies injected by webpack -->
     
-  <script type="text/javascript" src="vendor.js"></script><script type="text/javascript" src="app.js"></script></body>
+  <script type="text/javascript" src="/js/vendor.js"></script><script type="text/javascript" src="/js/app.js"></script></body>
  </html>

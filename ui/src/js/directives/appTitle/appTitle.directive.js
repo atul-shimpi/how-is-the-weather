@@ -5,11 +5,7 @@ function appTitleDirective() {
         restrict: 'E',
         scope: {},
         replace: true,
-        template: `
-            <h2>
-                Welcome
-            </h2>
-        `
+        templateUrl: './src/views/title/title.html'
     };
 
 }

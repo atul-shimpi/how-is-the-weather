@@ -6,10 +6,9 @@ export default  function routeConfig($stateProvider, $urlRouterProvider) {
         url: '/',
         templateUrl: 'src/views/welcome.html'
       });
-  }; 
+}; 
     
 routeConfig.$inject = [
   '$stateProvider',
   '$urlRouterProvider'
 ];    
-    
