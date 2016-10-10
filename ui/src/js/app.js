@@ -1,10 +1,12 @@
-import styles from "../css/app.scss";
-import '../../node_modules/bootstrap/dist/css/bootstrap.css';
+import styles from "../scss/app.scss";
+
+import components from './components';
 import directives from './directives';
 import statesAndRoutes from './states-and-routes'
 
 var app = angular.module('weatherApp', [
   'ui.router',
+  components.name,
   directives.name
 ]); 
 

@@ -10,13 +10,15 @@
     <!-- / Yoast SEO plugin. -->    
   </head>
   
-  <body ng-app = 'weatherApp'>
-  <app-title></app-title>
-    <div
-      style="height: 100%;"
-      ui-view
-      ></div>
-
+  <body ng-app="weatherApp">  
+  
+  <div class="header-region">
+    <app-title></app-title>
+  </div>
+  
+  <div class="body-region">  
+    <div ui-view></div>
+ </div>
     <!-- Our app and all dependencies injected by webpack -->
     
   </body>
