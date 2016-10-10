@@ -1,7 +1,8 @@
 .app-title {
   height: 80px;
   width: 100%;
-  background-color: RGB(36, 48, 60); 
+  /*background-color: RGB(36, 48, 60);*/
+  background-color: RGB(36, 148, 60);
   position: absolute;
   
   &_image{   
@@ -15,6 +16,7 @@
     margin-top: 35px;
     float: left;
     color: grey;
+	font-size: 14px;
   }
 }
 
