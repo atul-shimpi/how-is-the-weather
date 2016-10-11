@@ -1,22 +1,24 @@
 <div class="permissions">
   <span class="msg">
-    To know the weather conditions, the application will
-    read your location information.<br>
-	Do you want to continue? </span>
+    To show weather conditions for your location, the application
+	needs to read your device's location. Do you want to allow ?
+  </span>
   
   <br><br><br> 
   <button 
     type="button" 
 	class = "btn btn-sm btn-success"
-	ng-click="onClickGetWeather();">
-	  Yes, Read
+	style="width: 160px;"
+	ng-click="onClickYes();">
+	  Yes, read
   </button>
   
    
   <button 
     type="button" 
 	class = "btn btn-sm btn-default"
+	style="width: 160px;"
 	ng-click="onClickNoThanks();">
-	  No, Thanks
+	  No, I will specify
   </button>
 </div>

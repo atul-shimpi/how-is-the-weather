@@ -11,7 +11,12 @@ export default  function routeConfig($stateProvider, $urlRouterProvider) {
         url: '/permissions',
         templateUrl: 'src/views/permissions/permissions.html',
 		controller: 'PermissionsController'
-    });   
+    })
+    .state('location-weather', {
+        url: '/latitude/:latitude/longitude/:longitude/weather',
+        templateUrl: 'src/views/weatherDashboard/weatherDashboard.html',
+		controller: 'WeatherDashboardController'
+    });  	
 }; 
     
 routeConfig.$inject = [
