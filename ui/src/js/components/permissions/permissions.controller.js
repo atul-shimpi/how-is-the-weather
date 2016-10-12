@@ -4,7 +4,7 @@ function PermissionsController($scope,
     'ngInject';
 	
 	$scope.onClickYes = function(){
-	  $state.go("location-weather", {latitude: 100, longitude: 200});
+	  $state.go("location-weather", {lat: 100, long: 200});
 	};
 	
 	$scope.onClickNoThanks = function(){

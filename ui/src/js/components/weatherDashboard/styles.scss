@@ -1,0 +1,24 @@
+.dashboard {
+  font-size: 20px;
+  font-weight: bold;
+  
+  &_wall {
+    height: 90px;  
+    line-height: 90px;      
+    background-color: white;    
+    margin-bottom: 1px;  
+    text-align: center;
+  }
+  
+  &_city {
+    color: RGB(0, 128, 128);
+  }
+  
+  &_weather_description {
+    color: darkgrey;
+  }
+  
+  &_date {
+    color: RGB(0, 200, 200);
+  }
+}

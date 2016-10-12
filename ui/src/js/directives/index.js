@@ -1,5 +1,7 @@
 import appTitleDirective from './appTitle';
+import appMenuDirective from './appMenu';
 
 export default angular.module('myDirectives', [
-	appTitleDirective.name
+	appTitleDirective.name,
+  appMenuDirective.name
 ]);

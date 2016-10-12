@@ -13,7 +13,7 @@ export default  function routeConfig($stateProvider, $urlRouterProvider) {
 		controller: 'PermissionsController'
     })
     .state('location-weather', {
-        url: '/latitude/:latitude/longitude/:longitude/weather',
+        url: '/weather?lat&long',
         templateUrl: 'src/views/weatherDashboard/weatherDashboard.html',
 		controller: 'WeatherDashboardController'
     });  	
