@@ -8,7 +8,7 @@ function PermissionsController($scope,
 	};
 	
 	$scope.onClickNoThanks = function(){
-	  $state.go("welcome");
+	  $state.go("city-and-postal-code");
 	};    
     	
 }

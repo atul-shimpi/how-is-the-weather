@@ -5,17 +5,22 @@ export default  function routeConfig($stateProvider, $urlRouterProvider) {
     .state('welcome', {
         url: '/',
         templateUrl: 'src/views/welcome/welcome.html',
-		controller: 'WelcomeController'
+		    controller: 'WelcomeController'
     })
-	.state('permissions', {
+	  .state('permissions', {
         url: '/permissions',
         templateUrl: 'src/views/permissions/permissions.html',
-		controller: 'PermissionsController'
+		    controller: 'PermissionsController'
     })
+    .state('city-and-postal-code', {
+        url: '/city-postal-code',
+        templateUrl: 'src/views/cityAndPostalCode/cityAndPostalCode.html',
+		    controller: 'CityAndPostalCodeController'
+    })  
     .state('location-weather', {
         url: '/weather?lat&long',
         templateUrl: 'src/views/weatherDashboard/weatherDashboard.html',
-		controller: 'WeatherDashboardController'
+		    controller: 'WeatherDashboardController'
     });  	
 }; 
     

@@ -1,25 +1,30 @@
-function WeatherDashboardController($scope,
-                           $state,
-                           $log,
-						   WeatherService) {
-    'ngInject';
+function WeatherDashboardController(
+  $scope,
+  $state,
+  $log,
+  WeatherService) {
+  'ngInject';
 	
-	
-	WeatherService.queryByCityName('Mumbai').then(function (data) {
-		$scope.weather = {
-      date: new Date(),
-      city: data.name,
-      description: data.weather[0].description,
-      iconUrl: 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png',
-      temperature: data.main.temp,
-      pressure: data.main.pressure,
-      humidity: data.main.humidity,
-      wind: data.wind.speed
-	};
-	});
-		
-	
-	
+  initialize();
+  
+	function initialize() { 
+    $scope.gettingWeatherInProgress = true;  
+    $scope.gotWeather = false;
+	  WeatherService.queryByCityName('Mumbai')
+     .then(
+       function (data) {
+         $scope.weather = data;
+         $scope.anyError = false;
+         $scope.gettingWeatherInProgress = false; 
+         $scope.gotWeather = true;
+       }, 
+       function(error){
+         $scope.anyError = true;
+         $scope.errDesc =  error;
+         $scope.gettingWeatherInProgress = false;          
+       }
+    );
+  }
 }
 
 export {WeatherDashboardController};
