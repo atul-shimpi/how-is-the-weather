@@ -22,6 +22,7 @@ export default  function routeConfig($stateProvider, $urlRouterProvider) {
         templateUrl: 'src/views/weatherDashboard/weatherDashboard.html',
 		    controller: 'WeatherDashboardController'
     })
+    .state('region-weather', {
         url: '/weather?region',
         templateUrl: 'src/views/weatherDashboard/weatherDashboard.html',
 		    controller: 'WeatherDashboardController'

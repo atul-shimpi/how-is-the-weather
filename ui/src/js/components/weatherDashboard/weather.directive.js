@@ -46,7 +46,7 @@ function weatherDirective() {
           <div ng-if="gotWeather" class="dashboard_wall">               
 				    <span class="dashboard_weather_description">
  				        Today is {{weather.description}}
-                <img src="{{weather.iconUrl}}"></img>
+                <img ng-src="{{gotWeather ? weather.iconUrl : ''}}"></img>
               </span>             
 			    </div>	         
         
