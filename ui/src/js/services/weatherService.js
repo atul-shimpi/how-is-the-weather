@@ -8,7 +8,21 @@ function WeatherService($resource, $q, $filter) {
   actions = {};
 
   resource = $resource(baseUrl, defaults, actions);
-
+  
+  resource.queryByLatLong = function (lat, long_) {
+    return this.get({
+        lat: lat,
+        lon: long_
+        }).$promise.then(      
+            function(data) { //success
+              return buildWeather(data);
+            },
+            function(data){ //failure
+              return $q.reject(data);;
+            }
+          );
+  };   
+  
   resource.queryByCityName = function (cityName) {
     return this.get({q: cityName}).$promise.then(      
             function(data) { //success

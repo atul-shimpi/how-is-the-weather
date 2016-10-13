@@ -16,10 +16,17 @@ function weatherDirective() {
               </span>
               
               <span ng-if="anyError" class="dashboard_error">
- 				        Opps...encountered some issues while fetching weather...
-                
+ 				        Opps...encountered some issues while fetching weather...                               
               </span
-              			    
+              
+              <p></p>
+              <span ng-if="anyError" class="dashboard_error_desc">
+              {{errDesc}}                               
+              </span
+              
+             
+              <div ng-if="anyError">
+              </div>               
             
 			    </div>
           

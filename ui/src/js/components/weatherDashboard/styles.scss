@@ -4,13 +4,17 @@
   
   &_status {
     height: 90px;  
-    line-height: 90px;        
+    line-height: 20px;        
     margin-bottom: 1px;  
-    text-align: center;
+    text-align: center;    
   }
   
   &_error {
     color: red;
+  }
+  
+  &_error_desc {
+    font-size: 12px;
   }
   
   &_wall {
@@ -19,6 +23,7 @@
     background-color: white;    
     margin-bottom: 1px;  
     text-align: center;
+    top: 10px;
   }
   
   &_city {

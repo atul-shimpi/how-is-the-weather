@@ -21,6 +21,10 @@ export default  function routeConfig($stateProvider, $urlRouterProvider) {
         url: '/weather?lat&long',
         templateUrl: 'src/views/weatherDashboard/weatherDashboard.html',
 		    controller: 'WeatherDashboardController'
+    })
+        url: '/weather?region',
+        templateUrl: 'src/views/weatherDashboard/weatherDashboard.html',
+		    controller: 'WeatherDashboardController'
     });  	
 }; 
     
