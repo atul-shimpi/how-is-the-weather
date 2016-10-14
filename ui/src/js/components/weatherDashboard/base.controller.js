@@ -1,29 +1,18 @@
-import {BaseController} from './baseController';
-
-
-function WeatherDashboardController(
+function BaseController(
   $scope,
   $state,
   $log,  
   WeatherService) {
-  'ngInject';	
-  
-  
+  'ngInject';  
   initialize();  
-	function initialize() {   
-  //var d = new baseController();
-    BaseController.call(this, $scope, $state, $log, WeatherService);  
-    //$scope.gettingWeatherInProgress = true;  
-    //$scope.gotWeather = false;
-   
-    if(navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(getWeatherByLatLong, setErrors);
-    } else {
-      setErrors('Geolocation is not supported by this browser.');
-    } 
+  
+	function initialize() {      
+    $scope.gettingWeatherInProgress = true;  
+    $scope.gotWeather = false;
+    $scope.favCity = 'venice';    
   };
   
-  function getWeatherByLatLong(position) {
+  this.getWeatherByLatLong = function(position) {
     WeatherService.queryByLatLong(position.coords.latitude, position.coords.longitude)
      .then(
        function (data) {
@@ -40,7 +29,8 @@ function WeatherDashboardController(
     );
   };
   
-  function setErrors(error) {     
+  this.setErrors = function(error) {   
+    alert('jo');  
     $scope.anyError = true;
     $scope.errDesc = angular.toJson(error) ? 'Application is not able to read your location.' : error;
     $scope.gettingWeatherInProgress = false;     
@@ -48,4 +38,4 @@ function WeatherDashboardController(
   };
 }
 
-export {WeatherDashboardController};
+export {BaseController};

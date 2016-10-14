@@ -17,12 +17,12 @@ export default  function routeConfig($stateProvider, $urlRouterProvider) {
         templateUrl: 'src/views/cityAndPostalCode/cityAndPostalCode.html',
 		    controller: 'CityAndPostalCodeController'
     })  
-    .state('location-weather', {
-        url: '/weather?lat&long',
+    .state('weather-by-lat-long', {
+        url: '/weather',
         templateUrl: 'src/views/weatherDashboard/weatherDashboard.html',
-		    controller: 'WeatherDashboardController'
+		    controller: 'LatLongController'
     })
-    .state('region-weather', {
+    .state('weather-by-city', {
         url: '/weather?region',
         templateUrl: 'src/views/weatherDashboard/weatherDashboard.html',
 		    controller: 'WeatherDashboardController'

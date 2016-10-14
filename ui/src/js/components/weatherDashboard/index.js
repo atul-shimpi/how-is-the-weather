@@ -1,7 +1,7 @@
-import {WeatherDashboardController} from './weatherDashboard.controller';
+import {LatLongController} from './latLong.controller';
 import {weatherDirective} from './weather.directive';
 
 export default angular.module('weatherDashboard', [])
-    .controller('WeatherDashboardController', WeatherDashboardController)
+  .controller('LatLongController', LatLongController)
 	.directive('weather', weatherDirective)
 ;

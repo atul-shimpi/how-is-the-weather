@@ -12,7 +12,7 @@ function CityAndPostalCodeController(
 	
   $scope.onClickGetWeather = function() {
     if ($scope.city === null || $scope.city == "") {
-      alert('Please entr city name or postal code');
+      alert('Please enter city name or postal code');
     } else {
     }
   };
