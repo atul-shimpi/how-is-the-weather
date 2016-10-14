@@ -18,24 +18,27 @@
   }
   
   &_wall {
-    height: 90px;  
-    line-height: 90px;      
+    height: 90px;        
     background-color: white;    
     margin-bottom: 1px;  
-    text-align: center;
-    top: 10px;
+    text-align: center;  
+    align-content: center;    
   }
   
-  &_city {
+  &_progress {
     color: RGB(0, 128, 128);
   }
   
+  &_city {
+    color: lightteal;
+  }
+  
   &_weather_description {
-    color: darkgrey;
+    color: RGB(0, 128, 128);
   }
   
   &_date {
-    color: RGB(0, 200, 200);
+    color: darkgrey;
   }  
   
   &_error {
@@ -48,15 +51,16 @@
   position: relative;
   overflow: hidden;
   padding: 20px 20px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   border-radius: 2px;
   background-color: #464960;
+  height: 90px;
 }
 
 .dashboard-stats__title {
   margin: 0;
   text-align: right;
-  font-size: 24px;
+  font-size: 20px;
   color: white;
 }
 

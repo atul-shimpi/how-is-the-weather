@@ -7,11 +7,11 @@ function weatherDirective() {
     restrict: 'E',
       replace: false,
       template: `
-        <div>
-        
-          <div class="dashboard_status">                
-				    		
-				      <span ng-if="gettingWeatherInProgress" class="dashboard_city">
+        <div>  
+          
+          
+				  <div class="dashboard_wall">                
+				    	<span ng-if="gettingWeatherInProgress" class="dashboard_progress">
  				        Getting weather.....<i class="fa fa-spinner fa-spin"></i>               
               </span>
               
@@ -22,36 +22,29 @@ function weatherDirective() {
               <p></p>
               <span ng-if="anyError" class="dashboard_error_desc">
               {{errDesc}}                               
-              </span
+              </span>    
+				      <div>
+              <span ng-if="gotWeather" class="dashboard_city">              
+				       {{weather.city}}, 
+              </span>	              
               
-             
-              <div ng-if="anyError">
-              </div>               
-            
-			    </div>
-          
-				  <div ng-if="gotWeather" class="dashboard_wall">                
-				    		
-				      <span class="dashboard_city">
- 				        {{weather.city}},
-              </span>
-              
-              <span class="dashboard_date">              
+              <span ng-if="gotWeather" class="dashboard_date">              
 				       {{weather.date | date : "medium"}} 
-              </span>				    
+              </span>	
+</div>              
             
 			    </div>
           
                     
           <div ng-if="gotWeather" class="dashboard_wall">               
 				    <span class="dashboard_weather_description">
- 				        Today is {{weather.description}}
+ 				        Right now "{{weather.city}}" is having {{weather.description}}
                 <img ng-src="{{gotWeather ? weather.iconUrl : ''}}"></img>
               </span>             
 			    </div>	         
         
         <div ng-if="gotWeather" class="dashboard_wall">
-        <div class="col-xs-12 col-sm-3">
+        <div class="col-xs-12 col-sm-6 col-lg-3"">
             <div class="dashboard-stats__item bg-orange">
               
               <h4 class="dashboard-stats__title">
@@ -63,7 +56,7 @@ function weatherDirective() {
           </div>
           
           
-          <div class="col-xs-12 col-sm-3">
+          <div class="col-xs-12 col-sm-6 col-lg-3">
 
             <div class="dashboard-stats__item bg-pink">
              
@@ -74,7 +67,7 @@ function weatherDirective() {
             </div>            
           </div>
           
-          <div class="col-xs-12 col-sm-3">
+          <div class="col-xs-12 col-sm-6 col-lg-3"">
           <div class="dashboard-stats__item bg-accent">
              
               <h3 class="dashboard-stats__title">
@@ -84,7 +77,7 @@ function weatherDirective() {
             </div>
           </div>
           
-          <div class="col-xs-12 col-sm-3">
+          <div class="col-xs-12 col-sm-6 col-lg-3"">
 
             <div class="dashboard-stats__item bg-teal">
              
