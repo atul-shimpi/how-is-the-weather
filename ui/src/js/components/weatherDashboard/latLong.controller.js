@@ -1,6 +1,5 @@
 import {BaseController} from './base.controller';
 
-
 function LatLongController(
   $scope,
   $state,
@@ -9,12 +8,15 @@ function LatLongController(
   'ngInject';	
   
   BaseController.call(this, $scope, $state, $log, WeatherService);
-     
+  
   if(navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(this.getWeatherByLatLong, BaseController.setErrors);
+  //  if(0) {
+    navigator.geolocation.getCurrentPosition(this.getWeatherByLatLong, $scope.onGettingWeatherFailed);   
   } else {
-    BaseController.setErrors('Geolocation is not supported by this browser.');
+    $scope.onGettingWeatherFailed('Geolocation is not supported by this browser.');
   }   
 }
+
+LatLongController.prototype = Object.create(BaseController.prototype);
 
 export {LatLongController};

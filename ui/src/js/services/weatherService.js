@@ -20,7 +20,7 @@ function WeatherService($resource, $q, $filter) {
             function(data){ //failure
               return $q.reject(data);;
             }
-          );
+        );
   };   
   
   resource.queryByCityName = function (cityName) {
@@ -33,7 +33,18 @@ function WeatherService($resource, $q, $filter) {
             }
           );
   };   
-	   
+	
+  resource.queryPostalCode = function (postalCode) {
+    return this.get({zip: postalCode}).$promise.then(      
+            function(data) { //success
+              return buildWeather(data);
+            },
+            function(data){ //failure
+              return $q.reject(data);;
+            }
+          );
+  };   
+  
   function buildWeather(data) {
     return  {
       date: new Date(),

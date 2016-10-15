@@ -8,34 +8,58 @@ function BaseController(
   
 	function initialize() {      
     $scope.gettingWeatherInProgress = true;  
-    $scope.gotWeather = false;
-    $scope.favCity = 'venice';    
+    $scope.gotWeather = false; 
   };
-  
+    
+  //get weather by lat and long
   this.getWeatherByLatLong = function(position) {
     WeatherService.queryByLatLong(position.coords.latitude, position.coords.longitude)
      .then(
-       function (data) {
-         $scope.weather = data;
-         $scope.anyError = false;
-         $scope.gettingWeatherInProgress = false; 
-         $scope.gotWeather = true;
+       function (weather) {//got weather
+         $scope.gotWeather(weather);  
        }, 
-       function(error){
-         $scope.anyError = true;
-         $scope.errDesc =  error;
-         $scope.gettingWeatherInProgress = false;          
+       function(error){ //some error while getting weather
+         $scope.onGettingWeatherFailed(error);            
        }
     );
   };
   
-  this.setErrors = function(error) {   
-    alert('jo');  
-    $scope.anyError = true;
-    $scope.errDesc = angular.toJson(error) ? 'Application is not able to read your location.' : error;
-    $scope.gettingWeatherInProgress = false;     
-    $scope.$apply();     
+  //get weather by city
+  this.getWeatherByCity = function(city) {
+    WeatherService.queryByCityName(city)
+     .then(
+       $scope.gotWeather, //got weather     
+       $scope.onGettingCityWeatherFailed //failed getting weather    
+    );
   };
-}
-
+  
+  $scope.onGettingCityWeatherFailed = function(error) {
+    $scope.anyError = true;
+    $scope.errDesc =  error;
+    $scope.gettingWeatherInProgress = false;
+     $scope.gotWeather = false;
+    if(!$scope.$$phase) {
+      $scope.$apply();  
+    }
+  };
+  
+  $scope.onGettingWeatherFailed = function(error) {
+    $scope.anyError = true;
+    $scope.errDesc =  error;
+    $scope.gettingWeatherInProgress = false;
+     $scope.gotWeather = false;
+    if(!$scope.$$phase) {
+      $scope.$apply();  
+    }
+  };
+  
+  $scope.gotWeather = function(weather) {
+    $scope.weather = weather;
+    $scope.anyError = false;
+    $scope.gettingWeatherInProgress = false; 
+    $scope.gotWeather = true;
+  };   
+  
+};
+ 
 export {BaseController};

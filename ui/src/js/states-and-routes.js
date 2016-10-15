@@ -23,9 +23,9 @@ export default  function routeConfig($stateProvider, $urlRouterProvider) {
 		    controller: 'LatLongController'
     })
     .state('weather-by-city', {
-        url: '/weather?region',
+        url: '/city/:city/weather',
         templateUrl: 'src/views/weatherDashboard/weatherDashboard.html',
-		    controller: 'WeatherDashboardController'
+		    controller: 'CityController'
     });  	
 }; 
     
