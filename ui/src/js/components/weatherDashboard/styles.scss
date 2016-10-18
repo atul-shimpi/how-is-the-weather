@@ -86,3 +86,11 @@
 .bg-teal {
   background-color: #4db6ac !important;
 }
+
+.dashboard-stats__item > .fa {
+  position: absolute;
+  bottom: -20%;
+  left: -5%;
+  font-size: 75px;
+  color: rgba(255, 255, 255, 0.15);
+}

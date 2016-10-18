@@ -46,7 +46,7 @@ function weatherDirective() {
         <div ng-if="gotWeather" class="dashboard_wall">
         <div class="col-xs-12 col-sm-6 col-lg-3"">
             <div class="dashboard-stats__item bg-orange">
-              
+              <i class="fa fa-sun-o"></i>
               <h4 class="dashboard-stats__title">
                 <span>{{weather.temperature}}</span> 
                 <small>Temperature</small>
@@ -59,7 +59,7 @@ function weatherDirective() {
           <div ng-if="gotWeather" class="col-xs-12 col-sm-6 col-lg-3">
 
             <div class="dashboard-stats__item bg-pink">
-             
+             <i class="fa fa-globe"></i>
               <h3 class="dashboard-stats__title">
                 <span>{{weather.humidity}}</span> 
                 <small>Humidity</small>
@@ -69,7 +69,7 @@ function weatherDirective() {
           
           <div ng-if="gotWeather" class="col-xs-12 col-sm-6 col-lg-3"">
           <div class="dashboard-stats__item bg-accent">
-             
+             <i class="fa fa-sun-o"></i>
               <h3 class="dashboard-stats__title">
                 <span>{{weather.wind}}</span> 
                 <small>Wind</small>
@@ -80,7 +80,7 @@ function weatherDirective() {
           <div ng-if="gotWeather" class="col-xs-12 col-sm-6 col-lg-3"">
 
             <div class="dashboard-stats__item bg-teal">
-             
+             <i class="fa fa-comments"></i>
               <h3 class="dashboard-stats__title">
                 <span>{{weather.pressure}}</span>
                 <small>Pressure</small>
