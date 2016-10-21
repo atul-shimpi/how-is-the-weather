@@ -29,23 +29,14 @@ function BaseController(
     WeatherService.queryByCityName(city)
      .then(
        $scope.gotWeather, //got weather     
-       $scope.onGettingCityWeatherFailed //failed getting weather    
+       $scope.onGettingWeatherFailed //failed getting weather    
     );
   };
   
-  $scope.onGettingCityWeatherFailed = function(error) {
-    $scope.anyError = true;
-    $scope.errDesc =  error;
-    $scope.gettingWeatherInProgress = false;
-     $scope.gotWeather = false;
-    if(!$scope.$$phase) {
-      $scope.$apply();  
-    }
-  };
   
-  $scope.onGettingWeatherFailed = function(error) {
+  $scope.onGettingWeatherFailed = function(error) {    
     $scope.anyError = true;
-    $scope.errDesc =  error;
+    $scope.errDesc =  error.data.message + ' - ' + error.config.params.q;
     $scope.gettingWeatherInProgress = false;
      $scope.gotWeather = false;
     if(!$scope.$$phase) {
@@ -59,6 +50,10 @@ function BaseController(
     $scope.gettingWeatherInProgress = false; 
     $scope.gotWeather = true;
   };   
+  
+  $scope.onClickYes = function() {
+    $state.go('city-and-postal-code');
+  }
   
 };
  

@@ -12,7 +12,8 @@ function CityController(
     this.getWeatherByCity($state.params.city);
   } else {
     $scope.onGettingWeatherFailed('City is not specified');
-  }
+  }  
+  
 };
 
 CityController.prototype = Object.create(BaseController.prototype);

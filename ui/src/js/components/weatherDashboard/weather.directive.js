@@ -22,7 +22,10 @@ function weatherDirective() {
               <p></p>
               <span ng-if="anyError" class="dashboard_error_desc">
               {{errDesc}}                               
-              </span>    
+              </span> 
+              
+              
+              
 				      <div>
               <span ng-if="gotWeather" class="dashboard_city">              
 				       {{weather.city}}, 
@@ -31,7 +34,7 @@ function weatherDirective() {
               <span ng-if="gotWeather" class="dashboard_date">              
 				       {{weather.date | date : "medium"}} 
               </span>	
-</div>              
+          </div>              
             
 			    </div>
           
@@ -89,6 +92,19 @@ function weatherDirective() {
             
           </div>
           </div>
+          
+          <div class="dashboard_wall">
+              <span>
+              Do you want to try another city or postal code ? 
+              <button 
+    type="button" 
+	  class = "btn btn-sm btn-success"
+	  
+	  ng-click="onClickYes();">
+	  Yes
+  </button>              
+              </span> 
+              </div>
       `
   };
 
