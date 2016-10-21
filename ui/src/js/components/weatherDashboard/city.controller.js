@@ -7,12 +7,13 @@ function CityController(
   WeatherService) {
   'ngInject';	
   
+  
   BaseController.call(this, $scope, $state, $log, WeatherService);
   if ($state.params.city) {
     this.getWeatherByCity($state.params.city);
   } else {
     $scope.onGettingWeatherFailed('City is not specified');
-  }  
+  }
   
 };
 

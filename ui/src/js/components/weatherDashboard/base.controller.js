@@ -6,20 +6,22 @@ function BaseController(
   'ngInject';  
   initialize();  
   
-	function initialize() {      
+  var self = this;
+	
+  function initialize() {      
     $scope.gettingWeatherInProgress = true;  
     $scope.gotWeather = false; 
   };
     
   //get weather by lat and long
-  this.getWeatherByLatLong = function(position) {
+  this.getWeatherByLatLong = function(position) {   
     WeatherService.queryByLatLong(position.coords.latitude, position.coords.longitude)
      .then(
-       function (weather) {//got weather
-         $scope.gotWeather(weather);  
+       function (weather) {//got weather         
+         self.gotWeather(weather);  
        }, 
        function(error){ //some error while getting weather
-         $scope.onGettingWeatherFailed(error);            
+         self.onGettingWeatherFailed(error);            
        }
     );
   };
@@ -28,13 +30,12 @@ function BaseController(
   this.getWeatherByCity = function(city) {
     WeatherService.queryByCityName(city)
      .then(
-       $scope.gotWeather, //got weather     
-       $scope.onGettingWeatherFailed //failed getting weather    
+       self.gotWeather, //got weather     
+       self.onGettingWeatherFailed //failed getting weather    
     );
   };
-  
-  
-  $scope.onGettingWeatherFailed = function(error) {    
+    
+  this.onGettingWeatherFailed = function(error) {    
     $scope.anyError = true;
     if (error.data) {
       $scope.errDesc =  error.data.message + ' - ' + error.config.params.q;
@@ -42,13 +43,13 @@ function BaseController(
       $scope.errDesc = error;
     }
     $scope.gettingWeatherInProgress = false;
-     $scope.gotWeather = false;
+    $scope.gotWeather = false;
     if(!$scope.$$phase) {
       $scope.$apply();  
     }
   };
   
-  $scope.gotWeather = function(weather) {
+  this.gotWeather = function(weather) {
     $scope.weather = weather;
     $scope.anyError = false;
     $scope.gettingWeatherInProgress = false; 
