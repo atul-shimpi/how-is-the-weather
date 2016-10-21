@@ -1,5 +1,8 @@
-# how-is-the-weather
+# Web Application to get current weather.
 Web Application for monitoring weather conditions in the world
+
+# Design Document
+- https://drive.google.com/open?id=1lvPZWL6E_8LCj4LMNLJerST3AIkbAtdB3KDddIaomb4
 
 # Install
 - Clone the repository.
