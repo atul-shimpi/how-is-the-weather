@@ -11,7 +11,7 @@ Give below commands
 
 
 # Live Link
-http://www.HiAtul.com
+http://www.weather.HiAtul.com
 
 # Contact details
 Author : Atul Shimpi
