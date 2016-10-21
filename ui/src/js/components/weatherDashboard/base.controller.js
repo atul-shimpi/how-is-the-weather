@@ -36,7 +36,7 @@ function BaseController(
   
   $scope.onGettingWeatherFailed = function(error) {    
     $scope.anyError = true;
-    if (error.data.message) {
+    if (error.data) {
       $scope.errDesc =  error.data.message + ' - ' + error.config.params.q;
     } else {
       $scope.errDesc = error;
