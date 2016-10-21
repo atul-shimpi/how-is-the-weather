@@ -36,7 +36,11 @@ function BaseController(
   
   $scope.onGettingWeatherFailed = function(error) {    
     $scope.anyError = true;
-    $scope.errDesc =  error.data.message + ' - ' + error.config.params.q;
+    if (error.data.message) {
+      $scope.errDesc =  error.data.message + ' - ' + error.config.params.q;
+    } else {
+      $scope.errDesc = error;
+    }
     $scope.gettingWeatherInProgress = false;
      $scope.gotWeather = false;
     if(!$scope.$$phase) {
