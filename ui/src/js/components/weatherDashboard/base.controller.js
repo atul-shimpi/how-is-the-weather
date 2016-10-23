@@ -50,8 +50,7 @@ function BaseController(
   };
   
   //remove this to class instance
-  $scope.onGettingWeatherFailed = function(error) {    
-    alert('himu');
+  $scope.onGettingWeatherFailed = function(error) {
     $scope.anyError = true;
     if (error.data) {
       $scope.errDesc =  error.data.message + ' - ' + error.config.params.q;
