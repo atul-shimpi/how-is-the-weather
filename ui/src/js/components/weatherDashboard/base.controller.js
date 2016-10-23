@@ -49,6 +49,22 @@ function BaseController(
     }
   };
   
+  //remove this to class instance
+  $scope.onGettingWeatherFailed = function(error) {    
+    alert('himu');
+    $scope.anyError = true;
+    if (error.data) {
+      $scope.errDesc =  error.data.message + ' - ' + error.config.params.q;
+    } else {
+      $scope.errDesc = error;
+    }
+    $scope.gettingWeatherInProgress = false;
+    $scope.gotWeather = false;
+    if(!$scope.$$phase) {
+      $scope.$apply();  
+    }
+  };
+  
   this.gotWeather = function(weather) {
     $scope.weather = weather;
     $scope.anyError = false;
