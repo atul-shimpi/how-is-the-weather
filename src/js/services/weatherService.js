@@ -3,7 +3,7 @@ function WeatherService($resource, $q, $filter) {
 	
   var resource, baseUrl, defaults, actions;
 
-  baseUrl = 'http://api.openweathermap.org/data/2.5/weather';
+  baseUrl = 'http://xapi.openweathermap.org/data/2.5/weather';
   defaults = { appid: '9a1762d699d1fd388877654865fde34f' };
   actions = {};
 

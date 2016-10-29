@@ -12,7 +12,7 @@ function CityController(
   if ($state.params.city) {
     this.getWeatherByCity($state.params.city);
   } else {
-    $scope.onGettingWeatherFailed('City is not specified');
+    this.onGettingWeatherFailed('City is not specified');
   }
   
 };

@@ -10,7 +10,8 @@ function LatLongController(
   BaseController.call(this, $scope, $state, $log, WeatherService);
   
   if(navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(this.getWeatherByLatLong, $scope.onGettingWeatherFailed);  
+    //navigator.geolocation.getCurrentPosition(this.getWeatherByLatLong, $scope.onGettingWeatherFailed);  
+    navigator.geolocation.getCurrentPosition(this.getWeatherByLatLong.bind(this), this.onGettingWeatherFailed);
   } else {
     $scope.onGettingWeatherFailed('Geolocation is not supported by this browser.');
   }   
